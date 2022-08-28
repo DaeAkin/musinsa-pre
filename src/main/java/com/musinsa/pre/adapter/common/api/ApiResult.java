@@ -1,11 +1,15 @@
 package com.musinsa.pre.adapter.common.api;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.NonNull;
 import lombok.Value;
 
 import java.util.List;
+
+import static com.fasterxml.jackson.annotation.JsonInclude.Include.NON_EMPTY;
+import static com.fasterxml.jackson.annotation.JsonInclude.Include.NON_NULL;
 
 /**
  * 기본 API 응답 모델
@@ -76,6 +80,7 @@ public class ApiResult<T> {
         
         @JsonProperty("isSuccessful")
         private boolean successful;
+        @JsonInclude(NON_EMPTY)
         private String resultMessage;
         
         public Header(boolean successful, String resultMessage) {
