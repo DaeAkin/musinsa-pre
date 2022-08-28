@@ -36,6 +36,8 @@ dependencies {
     annotationProcessor "org.mapstruct:mapstruct-processor:${mapStructVersion}"
     implementation "com.querydsl:querydsl-jpa:${queryDslVersion}"
     annotationProcessor "com.querydsl:querydsl-apt:${queryDslVersion}"
+    testRuntimeOnly 'com.h2database:h2'
+    testImplementation 'io.github.benas:random-beans-spring:3.8.0'
 }
 
 tasks.named('test') {
