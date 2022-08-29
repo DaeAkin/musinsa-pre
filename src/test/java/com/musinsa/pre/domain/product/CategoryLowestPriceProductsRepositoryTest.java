@@ -34,7 +34,7 @@ class CategoryLowestPriceProductsRepositoryTest {
         List<CategoryLowestPriceProductDto> expectedCategoryLowestPriceProductDtos = List.of(
                 new CategoryLowestPriceProductDto("아우터", "A", new BigDecimal("5500.00")),
                 new CategoryLowestPriceProductDto("상의", "C", new BigDecimal("10000.00")),
-                new CategoryLowestPriceProductDto("바지", "C", new BigDecimal("3300.00"))
+                new CategoryLowestPriceProductDto("바지", "C", new BigDecimal("1300.00"))
         );
 
         //when

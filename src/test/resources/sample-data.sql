@@ -37,4 +37,5 @@ INSERT INTO product (name, price, brand_id, category_id) VALUES ('b_바지', 380
 INSERT INTO product (name, price, brand_id, category_id) VALUES ('c_상의', 10000, 3, 1);
 INSERT INTO product (name, price, brand_id, category_id) VALUES ('c_아우터', 6200, 3, 2);
 INSERT INTO product (name, price, brand_id, category_id) VALUES ('c_바지', 3300, 3, 3);
+INSERT INTO product (name, price, brand_id, category_id) VALUES ('c_바지2', 1300, 3, 3);
 
