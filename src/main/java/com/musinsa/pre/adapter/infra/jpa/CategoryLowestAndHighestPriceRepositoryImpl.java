@@ -5,6 +5,7 @@ import com.musinsa.pre.domain.product.dto.BrandsLowestAndHighestPrices.BrandPric
 import com.querydsl.core.types.Projections;
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import lombok.RequiredArgsConstructor;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Repository;
 
 import static com.musinsa.pre.domain.brand.QBrand.brand;
@@ -16,7 +17,7 @@ import static com.musinsa.pre.domain.product.QProduct.product;
 public class CategoryLowestAndHighestPriceRepositoryImpl implements CategoryLowestAndHighestPriceRepository {
 
     private final JPAQueryFactory queryFactory;
-    
+    @Cacheable(cacheNames = "getHighestBrand")
     @Override
     public BrandPrice getHighestBrand(Long categoryId) {
         return queryFactory.select(Projections.constructor(BrandPrice.class,
@@ -29,8 +30,9 @@ public class CategoryLowestAndHighestPriceRepositoryImpl implements CategoryLowe
                 .orderBy(product.price.desc())
                 .fetchFirst();
     }
-    
 
+
+    @Cacheable(cacheNames = "getLowestBrand")
     @Override
     public BrandPrice getLowestBrand(Long categoryId) {
         return queryFactory.select(Projections.constructor(BrandPrice.class,

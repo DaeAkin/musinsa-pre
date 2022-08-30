@@ -5,6 +5,7 @@ import com.musinsa.pre.domain.product.dto.CategoryLowestBrandPrice;
 
 import java.math.BigDecimal;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -28,7 +29,7 @@ public class CategoryLowestBrandPrices {
                                 CategoryLowestBrandPrice::getBrandName,
                                 CategoryLowestBrandPrice::getPrice,
                                 BigDecimal::add));
-        Map.Entry<String, BigDecimal> lowestBrand = Collections.min(lowestProductBrands.entrySet(), (o1, o2) -> o1.getValue().compareTo(o2.getValue()));
+        Map.Entry<String, BigDecimal> lowestBrand = Collections.min(lowestProductBrands.entrySet(), Comparator.comparing(Map.Entry::getValue));
         return new BrandPrice(lowestBrand.getKey(), lowestBrand.getValue());
     }
 }

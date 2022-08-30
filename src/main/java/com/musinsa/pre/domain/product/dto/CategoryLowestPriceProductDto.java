@@ -1,5 +1,7 @@
 package com.musinsa.pre.domain.product.dto;
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.musinsa.pre.adapter.config.MoneySerializer;
 import com.querydsl.core.annotations.QueryProjection;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -14,6 +16,7 @@ public class CategoryLowestPriceProductDto {
     
     private String category;
     private String brand;
+    @JsonSerialize(using = MoneySerializer.class)
     private BigDecimal price;
 
 

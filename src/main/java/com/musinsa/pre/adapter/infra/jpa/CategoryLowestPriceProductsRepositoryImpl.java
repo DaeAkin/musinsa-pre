@@ -8,6 +8,7 @@ import com.querydsl.core.types.Projections;
 import com.querydsl.core.types.dsl.Expressions;
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import lombok.RequiredArgsConstructor;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Repository;
 
 import java.math.BigDecimal;
@@ -20,10 +21,11 @@ import static com.musinsa.pre.domain.product.QProduct.product;
 
 @Repository
 @RequiredArgsConstructor
-public class CategoryLowestPriceProductRepositoryImpl implements CategoryLowestPriceProductsRepository {
+public class CategoryLowestPriceProductsRepositoryImpl implements CategoryLowestPriceProductsRepository {
 
     private final JPAQueryFactory queryFactory;
-    
+
+    @Cacheable(cacheNames = "searchAllCategoriesLowestPriceProduct")
     @Override
     public List<CategoryLowestPriceProductDto> searchAllCategoriesLowestPriceProduct() {
         List<Tuple> categoryLowestPrices = getLowestPriceInCategory();

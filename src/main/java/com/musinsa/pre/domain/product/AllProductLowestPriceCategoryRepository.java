@@ -6,7 +6,6 @@ import org.springframework.cache.annotation.Cacheable;
 import java.util.List;
 
 public interface AllProductLowestPriceCategoryRepository {
-
-    @Cacheable(cacheNames = "getAllProductLowestPrice")
+    
     List<CategoryLowestBrandPrice> getAllProductLowestPrice();
 }
