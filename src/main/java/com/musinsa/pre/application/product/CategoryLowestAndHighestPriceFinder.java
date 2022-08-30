@@ -7,6 +7,7 @@ import com.musinsa.pre.domain.product.CategoryLowestAndHighestPriceRepository;
 import com.musinsa.pre.domain.product.dto.BrandsLowestAndHighestPrices;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
@@ -15,6 +16,7 @@ public class CategoryLowestAndHighestPriceFinder {
     private final CategoryRepository categoryRepository;
     private final CategoryLowestAndHighestPriceRepository categoryLowestAndHighestPriceRepository;
     
+    @Transactional(readOnly = true)
     public BrandsLowestAndHighestPrices getMinAndMaxPrice(String categoryName) {
         Category category = categoryRepository.findByName(categoryName).orElseThrow(() -> new CategoryNotFoundException(categoryName));
 

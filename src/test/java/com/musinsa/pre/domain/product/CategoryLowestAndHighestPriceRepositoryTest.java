@@ -2,8 +2,6 @@ package com.musinsa.pre.domain.product;
 
 import com.musinsa.pre.adapter.config.QuerydslConfig;
 import com.musinsa.pre.adapter.infra.jpa.CategoryLowestAndHighestPriceRepositoryImpl;
-import com.musinsa.pre.adapter.infra.jpa.CategoryLowestPriceProductRepositoryImpl;
-import com.musinsa.pre.domain.product.dto.BrandsLowestAndHighestPrices;
 import com.musinsa.pre.domain.product.dto.BrandsLowestAndHighestPrices.BrandPrice;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

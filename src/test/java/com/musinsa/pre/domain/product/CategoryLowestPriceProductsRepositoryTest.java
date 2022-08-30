@@ -1,7 +1,7 @@
 package com.musinsa.pre.domain.product;
 
 import com.musinsa.pre.adapter.config.QuerydslConfig;
-import com.musinsa.pre.adapter.infra.jpa.CategoryLowestPriceProductRepositoryImpl;
+import com.musinsa.pre.adapter.infra.jpa.CategoryLowestPriceProductsRepositoryImpl;
 import com.musinsa.pre.domain.product.dto.CategoryLowestPriceProductDto;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -10,14 +10,13 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.context.annotation.Import;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.jdbc.Sql;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.math.BigDecimal;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-@Import({QuerydslConfig.class, CategoryLowestPriceProductRepositoryImpl.class})
+@Import({QuerydslConfig.class, CategoryLowestPriceProductsRepositoryImpl.class})
 @ActiveProfiles("test")
 @DataJpaTest
 @Sql("classpath:sample-data.sql")
