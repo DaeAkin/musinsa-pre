@@ -1,0 +1,12 @@
+### 모든 카테고리의 상품을 브랜드 별로 자유롭게 선택해서 모든 상품을 구매할 때 최저가 조회
+GET http://localhost:8080/v1/products/search/categories/lowest-price
+
+### 카테고리의 최저가와 최고가 브랜드 조회
+GET http://localhost:8080/v1/products/categories/상의/brands/lowest-highest-price
+
+### 카테고리의 최저가와 최고가 브랜드 조회 (잘못된 카테고리 입력)
+GET http://localhost:8080/v1/products/categories/이상한카테고리/brands/lowest-highest-price
+
+### 한 브랜드에서 모든 카테고리의 상품을 한꺼번에 구매할 경우 최저가 및 브랜드 조회
+GET http://localhost:8080/v1/products/all/categories/brands/lowest-price
+
