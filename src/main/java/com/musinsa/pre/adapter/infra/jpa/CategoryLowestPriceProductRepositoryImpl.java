@@ -23,7 +23,7 @@ import static com.musinsa.pre.domain.product.QProduct.product;
 public class CategoryLowestPriceProductRepositoryImpl implements CategoryLowestPriceProductsRepository {
 
     private final JPAQueryFactory queryFactory;
-
+    
     @Override
     public List<CategoryLowestPriceProductDto> searchAllCategoriesLowestPriceProduct() {
         List<Tuple> categoryLowestPrices = getLowestPriceInCategory();
